@@ -1,0 +1,288 @@
+/* ============================================================
+   FLEX MUSIC — Стили страницы товара
+   ============================================================ */
+
+.product-page {
+    padding: 32px 0 80px;
+}
+
+/* Сетка: галерея + инфо */
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+/* Галерея */
+.product-gallery {
+    position: sticky;
+    top: 100px;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #0d2a45, #164066);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(8rem, 15vw, 14rem);
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(0 20px 60px rgba(77, 208, 225, 0.2));
+}
+
+.product-gallery::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 120%, rgba(77, 208, 225, 0.25), transparent 60%);
+    pointer-events: none;
+}
+
+.product-gallery .product-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+}
+
+/* Инфо */
+.product-info { display: flex; flex-direction: column; }
+
+.product-info__category {
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.product-info__title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.product-info__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.product-info__price {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.product-info__price-current {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-ice);
+    letter-spacing: -1px;
+}
+
+.product-info__price-old {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+.product-info__price-discount {
+    padding: 4px 10px;
+    background: #ff8a65;
+    color: var(--bg-deep);
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-info__desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.product-info__actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.product-info__actions .btn {
+    padding: 16px 32px;
+    font-size: 1rem;
+}
+
+.product-info__actions .btn-primary svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Особенности под кнопками */
+.product-info__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.product-feature {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.product-feature__icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Характеристики */
+.product-specs {
+    margin-top: 80px;
+}
+
+.product-specs h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.product-specs__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: linear-gradient(160deg, var(--bg-card), var(--bg-mid));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.product-specs__table tr {
+    border-bottom: 1px solid var(--border);
+}
+
+.product-specs__table tr:last-child { border-bottom: none; }
+
+.product-specs__table td {
+    padding: 16px 24px;
+    font-size: 0.95rem;
+}
+
+.product-specs__table td:first-child {
+    color: var(--text-secondary);
+    width: 40%;
+    font-weight: 500;
+}
+
+.product-specs__table td:last-child {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Похожие товары */
+.related-section {
+    margin-top: 100px;
+}
+
+/* Скелетон */
+.product-skeleton {
+    background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-hover) 50%, var(--bg-card) 100%);
+    background-size: 200% 100%;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+    border-radius: 24px;
+    min-height: 400px;
+}
+
+.product-skeleton-line {
+    background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-hover) 50%, var(--bg-card) 100%);
+    background-size: 200% 100%;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+@keyframes skeletonPulse {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Не найдено */
+.product-not-found {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.product-not-found h2 {
+    font-size: 1.8rem;
+    margin: 20px 0 12px;
+}
+
+.product-not-found p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+    .product-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-gallery {
+        position: static;
+        font-size: 8rem;
+    }
+
+    .product-info__features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .product-info__actions {
+        flex-direction: column;
+    }
+
+    .product-info__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .product-info__features {
+        grid-template-columns: 1fr;
+    }
+}
+.product-gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     /* contain — если товар на белом/прозрачном фоне */
+    /* object-fit: cover;    ← если фото заполняет всё пространство */
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Галерея — картинка не выходит за скруглённые края */
+.product-gallery {
+    position: relative;
+    overflow: hidden;
+}

@@ -1,0 +1,293 @@
+/* ============================================================
+   FLEX MUSIC — Стили каталога
+   ============================================================ */
+
+/* ===== ЗАГОЛОВОК КАТАЛОГА ===== */
+.catalog-hero {
+    padding: 48px 0 24px;
+}
+
+.breadcrumbs {
+    display: flex;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-cyan);
+}
+
+.catalog-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.catalog-hero p {
+    color: var(--text-secondary);
+}
+
+/* ===== ПОДСВЕТКА АКТИВНОГО ПУНКТА МЕНЮ ===== */
+nav a.active {
+    color: var(--accent-cyan);
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+/* ===== СЕКЦИЯ КАТАЛОГА ===== */
+.catalog-section {
+    padding: 32px 0 80px;
+}
+
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ===== ФИЛЬТРЫ ===== */
+.filters {
+    position: sticky;
+    top: 100px;
+    background: linear-gradient(160deg, var(--bg-card), var(--bg-mid));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.filters-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.filters-reset {
+    background: none;
+    border: none;
+    color: var(--accent-cyan);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 0;
+    transition: var(--transition);
+}
+
+.filters-reset:hover {
+    color: var(--accent-ice);
+    text-decoration: underline;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.filter-input:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.15);
+}
+
+.filter-input::placeholder {
+    color: #5a7793;
+}
+
+.filter-price-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+/* ===== РАДИО-КАТЕГОРИИ ===== */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.filter-radio:hover {
+    background: rgba(77, 208, 225, 0.08);
+    color: var(--text-primary);
+}
+
+.filter-radio input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.filter-radio input:checked {
+    border-color: var(--accent-cyan);
+}
+
+.filter-radio input:checked::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(77, 208, 225, 0.6);
+}
+
+.filter-radio input:checked + span {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+/* ===== ТУЛБАР (сортировка + счётчик) ===== */
+.catalog-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: rgba(20, 43, 69, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.catalog-count {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.catalog-count strong {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+}
+
+.catalog-sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.catalog-sort .filter-label {
+    margin: 0;
+}
+
+.catalog-sort .filter-input {
+    width: auto;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+/* ===== ПУСТОЙ РЕЗУЛЬТАТ ===== */
+.catalog-empty {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(20, 43, 69, 0.4);
+    border: 1px dashed var(--border);
+    border-radius: 20px;
+}
+
+.catalog-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+    filter: grayscale(0.3);
+}
+
+.catalog-empty h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.catalog-empty p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        position: static;
+    }
+
+    .filter-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .catalog-toolbar {
+        padding: 14px 16px;
+    }
+
+    .catalog-sort {
+        width: 100%;
+    }
+
+    .catalog-sort .filter-input {
+        flex: 1;
+        min-width: 0;
+    }
+}
